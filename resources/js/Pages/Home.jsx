@@ -1,15 +1,13 @@
-import { Footer } from "@/Components/Footer";
 import ImageCarousel from "@/Components/ImageCarousel";
-import Header from "@/Components/ResponsiveNavbar";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import HeaderLayout from "@/Layouts/HeaderLayout";
 import { Head } from "@inertiajs/react";
-import { Avatar, Button, Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import { useState } from "react";
 
 export default function Dashboard({ auth }) {
-    const [me, setMe] = useState(false);
     return (
-        <AuthenticatedLayout
+        <HeaderLayout
             user={auth.user}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
@@ -107,6 +105,6 @@ export default function Dashboard({ auth }) {
                     <p>Follow us on Social Media</p>
                 </CardBody>
             </Card>
-        </AuthenticatedLayout>
+        </HeaderLayout>
     );
 }
